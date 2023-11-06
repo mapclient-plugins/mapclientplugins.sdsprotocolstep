@@ -1,0 +1,6 @@
+
+<RCC>
+  <qresource prefix="sdsprotocolstep">
+    <file>images/utility.png</file>
+  </qresource>
+</RCC>
