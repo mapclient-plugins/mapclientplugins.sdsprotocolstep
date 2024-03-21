@@ -35,12 +35,18 @@ scaffold_protocol = {
     'id': 'sds-protocol',
     'version': '0.1.0',
     'name': 'SimpleScaffold',
-    'info': 'This protocol defines the required files to create a Scaffold based SPARC dataset.',
+    'info': """
+    This protocol defines the required files to create a Scaffold based SPARC dataset.
+    This protocol uses four configuration files to create a Scaffold based dataset.
+    The four configuration files expected are from the following steps; Scaffold Creator,
+     Argon Viewer, and Scene Exporter.  This protocol expects two Scene Exporter configuration
+     files, one for the WebGL output and one for the thumbnail output."""
+    ,
     'inputs': [
-        _create_empty_identifier_file('application/json', 'Scaffold creator step configuration file.', 'primary'),
-        _create_empty_identifier_file('application/json', 'Argon viewer step configuration file.', 'primary'),
-        _create_empty_identifier_file('application/json', 'Scene exporter webGL step configuration file.', 'primary'),
-        _create_empty_identifier_file('application/json', 'Scene exporter thumbnail  step configuration file.', 'primary'),
+        _create_empty_identifier_file('application/json', 'MAP Client step configuration file.', 'primary'),
+        _create_empty_identifier_file('application/json', 'MAP Client step configuration file.', 'primary'),
+        _create_empty_identifier_file('application/json', 'MAP Client step configuration file.', 'primary'),
+        _create_empty_identifier_file('application/json', 'MAP Client step configuration file.', 'primary'),
         _create_empty_directory('WebGL output directory', 'derivative'),
         _create_empty_dict('JSON serializable Python dict containing provenance information.', 'primary/provenance.json')
     ]
