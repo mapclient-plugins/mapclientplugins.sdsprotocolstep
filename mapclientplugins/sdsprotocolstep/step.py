@@ -53,6 +53,7 @@ class SDSProtocolStep(WorkflowStepMountPoint):
         # Put your execute step code here before calling the '_doneExecution' method.
 
         protocol = get_protocol_by_name(self._config['protocol_name'])
+        self._portData0 = None
         if populate_protocol(protocol, self._portData1):
             self._portData0 = protocol
         self._doneExecution()
