@@ -9,9 +9,9 @@ The **SDS Protocol** is MAP Client plugin for gathering the requirements to fulf
 Workflow Connections
 --------------------
 
-As shown in :numref:`fig-mcp-sds-converter-workflow-connections`, the **SDS Protocol** requires a single user specified input.
+As shown in :numref:`fig-mcp-sds-converter-workflow-connections`, the **SDS Protocol** requires a single input that is either a *http://physiomeproject.org/workflow/1.0/rdf-schema#file_location* or is a list of this type.
 
-It produces one output, the type of which is user specified, which may be piped to other workflow steps:
+It produces one output, a *http://physiomeproject.org/workflow/1.0/rdf-schema#sds_protocol*, which may be piped to other workflow steps:
 
 .. _fig-mcp-sds-converter-workflow-connections:
 
