@@ -56,6 +56,7 @@ class SDSProtocolStep(WorkflowStepMountPoint):
         self._portData0 = None
         if populate_protocol(protocol, self._portData1):
             self._portData0 = protocol
+
         self._doneExecution()
 
     def setPortData(self, index, dataIn):
