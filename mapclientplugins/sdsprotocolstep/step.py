@@ -33,7 +33,13 @@ class SDSProtocolStep(WorkflowStepMountPoint):
                        'http://physiomeproject.org/workflow/1.0/rdf-schema#file_location'),
                       ('http://physiomeproject.org/workflow/1.0/rdf-schema#port',
                        'http://physiomeproject.org/workflow/1.0/rdf-schema#uses-list-of',
-                       'http://physiomeproject.org/workflow/1.0/rdf-schema#file_location')
+                       'http://physiomeproject.org/workflow/1.0/rdf-schema#file_location'),
+                      ('http://physiomeproject.org/workflow/1.0/rdf-schema#port',
+                       'http://physiomeproject.org/workflow/1.0/rdf-schema#uses',
+                       'http://physiomeproject.org/workflow/1.0/rdf-schema#directory_location'),
+                      ('http://physiomeproject.org/workflow/1.0/rdf-schema#port',
+                       'http://physiomeproject.org/workflow/1.0/rdf-schema#uses-list-of',
+                       'http://physiomeproject.org/workflow/1.0/rdf-schema#directory_location')
                       ])
         # Port data:
         self._portData0 = None  # http://physiomeproject.org/workflow/1.0/rdf-schema#sds_protocol
@@ -59,16 +65,18 @@ class SDSProtocolStep(WorkflowStepMountPoint):
 
         self._doneExecution()
 
-    def setPortData(self, index, dataIn):
+    def setPortData(self, index, data_in):
         """
         Add your code here that will set the appropriate objects for this step.
         The index is the index of the port in the port list.  If there is only one
         uses port for this step then the index can be ignored.
 
         :param index: Index of the port to return.
-        :param dataIn: The data to set for the port at the given index.
+        :param data_in: The data to set for the port at the given index.
         """
-        self._portData1 = dataIn  # http://physiomeproject.org/workflow/1.0/rdf-schema#file_location
+        if not isinstance(data_in, list):
+            data_in = [data_in]
+        self._portData1 = data_in  # http://physiomeproject.org/workflow/1.0/rdf-schema#file_location
 
     def getPortData(self, index):
         """
